@@ -1,0 +1,2173 @@
+{
+	"info": {
+		"_postman_id": "826f7f7a-5ab8-42c9-9aa8-14dc9d8c7a2b",
+		"name": "Komb-Node-V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\":\"Raheem\",\r\n    \"email\":\"subadmin12345@gmail.com\",\r\n    \"password\":\"subadmin12345\",\r\n    \"gender\":\"male\",\r\n    \"phoneNo\":\"+929110119833\",\r\n    \"userRole\":\"sub-admin\",\r\n    \"permission\":[\r\n        \"dashboard\", \"customers\", \"salons\", \"services\", \"payments\", \"offers\", \"coupons\", \"subcriptions\",\r\n        \"manage points\",\"email and push notification\", \"language\", \"complaints\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"t@gmail.com\",\r\n    \"password\":\"Taj@12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyOtp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNo\":\"+929110119833\",\r\n    \"otp\":\"188341\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/verify_Otp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"verify_Otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotpassword",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"sfsraheem222@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/api/v2/forgotpassword",
+							"protocol": "http",
+							"host": [
+								"ec2-18-191-10-78",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyForgotPasswordOtp",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n {  \r\n     \"email\":\"sfsraheem222@gmail.com\",\r\n     \"forgotPasswordOtp\":\"655735\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/verifyForgotPasswordOtp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"verifyForgotPasswordOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sfsraheem222@gmail.com\",\r\n    \"password\": \"lkjhgfdsa\",\r\n    \"confirmPassword\":\"lkjhgfdsa\",\r\n    \"resetToken\":\"21e7fb4d3ffa374bf6a1a21205b4c6c940fbacc0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resendOtp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"raheem27qq6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/resendOtp",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"resendOtp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Salon",
+			"item": [
+				{
+					"name": "findNearBySalon",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v2/getNearBySalon?lat=31.5582431&lng=74.2863564",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getNearBySalon"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "31.5582431"
+								},
+								{
+									"key": "lng",
+									"value": "74.2863564"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllSalonBySPId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZjODc1ODkzMjg1ODE3MjEwMjNjOWUiLCJpYXQiOjE2NjgxNDU5NzksImV4cCI6MTY3MDczNzk3OX0.yWljeJzXPOQLUZ9rqwT2oraAC7T1aUi_hm-iL-d97Q8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getSalonbySPId/636b553fa0dbeac1f95cab90",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getSalonbySPId",
+								"636b553fa0dbeac1f95cab90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findtrendingSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZjODc1ODkzMjg1ODE3MjEwMjNjOWUiLCJpYXQiOjE2NjgxNDU5NzksImV4cCI6MTY3MDczNzk3OX0.yWljeJzXPOQLUZ9rqwT2oraAC7T1aUi_hm-iL-d97Q8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/api/v2/getTrendingSalon",
+							"protocol": "http",
+							"host": [
+								"ec2-18-191-10-78",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getTrendingSalon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZlM2U2MjU3NTUwMjUzN2ZhNDVhZGYiLCJpYXQiOjE2NjgxNjkzMjksImV4cCI6MTY3MDc2MTMyOX0.686JPrSHGk-LZIwVIIkZUh6gryDzfrZkCsFlRVcugzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getSalon",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getSalon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findSalonById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZjODc1ODkzMjg1ODE3MjEwMjNjOWUiLCJpYXQiOjE2NjgxNDU5NzksImV4cCI6MTY3MDczNzk3OX0.yWljeJzXPOQLUZ9rqwT2oraAC7T1aUi_hm-iL-d97Q8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getSalon/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getSalon",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZlM2U2MjU3NTUwMjUzN2ZhNDVhZGYiLCJpYXQiOjE2NjgxNjkzMjksImV4cCI6MTY3MDc2MTMyOX0.686JPrSHGk-LZIwVIIkZUh6gryDzfrZkCsFlRVcugzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"businsessName\": \"Jhuggian\",\r\n  \"address\":\"Jhuggian\",\r\n  \"location\": {\r\n  \"type\":\"Point\",\r\n    \"coordinates\":[31.3668386,74.1575915]\r\n  },\r\n  \"portfolio\":[\r\n      {\r\n          \"albumName\":\"Women\",\r\n          \"portfolioImages\":[\r\n              {\r\n                  \"id\":\"woman3.png\",\r\n                  \"img\":\"http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/uploads/images/2022-12-02T05-31-05.382Z-woman3.png\"\r\n              },\r\n              {\r\n                  \"id\":\"woman12.png\",\r\n                  \"img\":\"http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/uploads/images/2022-11-30T07-50-54.004Z-woman12.png\"\r\n              },\r\n              {\r\n                  \"id\":\"woman13.png\",\r\n                  \"img\":\"http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/uploads/images/2022-11-30T07-49-22.186Z-woman13.png\"\r\n              }\r\n          ]\r\n      },{\r\n          \"albumName\":\"Men\",\r\n          \"portfolioImages\":[\r\n              {\r\n                  \"id\":\"man4.png\",\r\n                  \"img\":\"http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/uploads/images/2022-12-02T05-32-32.086Z-man4.png\"\r\n              }\r\n          ]\r\n      }\r\n  ],\r\n  \"city\": \"lahore\",\r\n  \"state\": \"punjab\",\r\n  \"postCode\": \"54000\",\r\n  \"description\": \"Jhuggian\",\r\n  \"serviceProviderID\":\"636b553fa0dbeac1f95cab90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/addSalon",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"addSalon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSalonReview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg3NzIxMjMsImV4cCI6MTY3MTM2NDEyM30.zWTOc0LrqX_To3wkgwiu6bztOKcfxD6YP4Ot8K98WyM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getReviewBySalonId/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getReviewBySalonId",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPopularSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getPopularSalon",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getPopularSalon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSalonByServiceId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc1YjlhNzFmMmQ0NDJkZWFkMmUxYzUiLCJpYXQiOjE2Njg3NTE1NzMsImV4cCI6MTY3MTM0MzU3M30.2VQQkAETW3HHTD2Utzg9mYYmGpZOvkR2CvWkyYZ91PU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/api/v2/getSalonByServiceId/636b45d3a0dbeac1f95cab81",
+							"protocol": "http",
+							"host": [
+								"ec2-18-191-10-78",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getSalonByServiceId",
+								"636b45d3a0dbeac1f95cab81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addSalonReview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc3MjE4NTQwZDVmMmMxNTMzZWI4YjMiLCJpYXQiOjE2Njg3NTE4MTAsImV4cCI6MTY3MTM0MzgxMH0.LS7nX-7p6pxCp-clZNsN5SxyEP4lKLSHvJqRnluVCAI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":5,\r\n    \"review\":\"mlkpnkoobjiio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/addSalonReview/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"addSalonReview",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSalonReview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0ODQzYTQyNmYwY2EzOWE1YjIyYzciLCJpYXQiOjE2Njk4Mjg3NjUsImV4cCI6MTY3MjQyMDc2NX0.ocwRC4Vgmp0Gxi6PJkcqLOC8MvpWzJOIvsiq4Q2Tqps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getReviewBySalonId/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getReviewBySalonId",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg3NzIxMjMsImV4cCI6MTY3MTM2NDEyM30.zWTOc0LrqX_To3wkgwiu6bztOKcfxD6YP4Ot8K98WyM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getSalon",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getSalon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "findservicebyid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZjODc1ODkzMjg1ODE3MjEwMjNjOWUiLCJpYXQiOjE2NjgxNDU5NzksImV4cCI6MTY3MDczNzk3OX0.yWljeJzXPOQLUZ9rqwT2oraAC7T1aUi_hm-iL-d97Q8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getservice/636b514ea0dbeac1f95cab8c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getservice",
+								"636b514ea0dbeac1f95cab8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllService",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/getAllService",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getAllService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findServiceBySalonId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getServiceBySalon/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getServiceBySalon",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0ODQzYTQyNmYwY2EzOWE1YjIyYzciLCJpYXQiOjE2NzAyMTkxNzQsImV4cCI6MTY3MjgxMTE3NH0.M-L4tAN7oDa_I4MM42EbJqIRrU_uRcLiJ2CxlODB-9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"servname\":\"cut\",\r\n  \"discription\": \"we do cutting\",\r\n  \"price\": \"30\",\r\n  \"approxtime\": \"40\",\r\n  \"category\":\"hair\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/addService",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"addService"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stylist",
+			"item": [
+				{
+					"name": "findStylistByServiceId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getStylistByServiceId/636b45d3a0dbeac1f95cab81?salonId=6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getStylistByServiceId",
+								"636b45d3a0dbeac1f95cab81"
+							],
+							"query": [
+								{
+									"key": "salonId",
+									"value": "6371df04b3eed0cc8455be2d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addStylist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"position\":\"Master\",\r\n    \"firstName\":\"Abdul\",\r\n    \"lastName\": \"Jabbar\",\r\n    \"email\":\"abduljabbar@gmail.com\",\r\n    \"phoneNo\":\"+9812727788\",\r\n    \"schedule\":{\r\n        \"day\":[\"Mon\",\"Tue\",\"Wed\", \"Fri\"],\r\n        \"to\":\"08:00 AM\",\r\n        \"from\":\"09: 00 PM\",\r\n        \"dayOff\":[\"Thu\", \"Sat\", \"Sun\"]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/addStylist",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"addStylist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStylist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getStylistById/6375c03e6e8f916b82fedd97",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getStylistById",
+								"6375c03e6e8f916b82fedd97"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStylistBySalonId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc1YjlhNzFmMmQ0NDJkZWFkMmUxYzUiLCJpYXQiOjE2Njg4NDUzMDYsImV4cCI6MTY3MTQzNzMwNn0.0sgB52KWHk9baINHFfPrczsMHqZeiPNGuTA-HVNNcQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getStylistBySalonId/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getStylistBySalonId",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service Type",
+			"item": [
+				{
+					"name": "addServiceType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"salonId\":\"6378bd39608cdeecac35fef2\",\r\n    \"serviceId\":\"636b45d3a0dbeac1f95cab81\",\r\n    \"name\":\"styling cutting\",\r\n    \"price\":\"30\",\r\n    \"duration\":\"30 min\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/addServiceType/636b514ea0dbeac1f95cab8c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"addServiceType",
+								"636b514ea0dbeac1f95cab8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findServiceTypeByStylistId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getServiceTypeByStylistId/6375c03e6e8f916b82fedd97?salonId=6371df04b3eed0cc8455be2d&serviceId=636b4d36a0dbeac1f95cab88",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getServiceTypeByStylistId",
+								"6375c03e6e8f916b82fedd97"
+							],
+							"query": [
+								{
+									"key": "salonId",
+									"value": "6371df04b3eed0cc8455be2d"
+								},
+								{
+									"key": "serviceId",
+									"value": "636b4d36a0dbeac1f95cab88"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "addSalontoFavrite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0ODQzYTQyNmYwY2EzOWE1YjIyYzciLCJpYXQiOjE2Njk2MzY2OTMsImV4cCI6MTY3MjIyODY5M30.E24i0NSHjXCfasjGl5buAcT4yVdRcRptWgd01z4GcQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/addSalontoFavrite/6371e140b3eed0cc8455be36",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"addSalontoFavrite",
+								"6371e140b3eed0cc8455be36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZlM2U2MjU3NTUwMjUzN2ZhNDVhZGYiLCJpYXQiOjE2NjgxNjkzMjksImV4cCI6MTY3MDc2MTMyOX0.686JPrSHGk-LZIwVIIkZUh6gryDzfrZkCsFlRVcugzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profilePic\":\"pqoghquq7tgu987qy6qqqiq8\",\r\n    \"account\":\"john doe\",\r\n    \"email\":\"new@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/updateUserById",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"updateUserById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeSalontoFavrite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0ODQzYTQyNmYwY2EzOWE1YjIyYzciLCJpYXQiOjE2Njk2MzY2OTMsImV4cCI6MTY3MjIyODY5M30.E24i0NSHjXCfasjGl5buAcT4yVdRcRptWgd01z4GcQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/removeSalontoFavrite/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"removeSalontoFavrite",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findFavoriteSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0ODQzYTQyNmYwY2EzOWE1YjIyYzciLCJpYXQiOjE2Njk2MzY2OTMsImV4cCI6MTY3MjIyODY5M30.E24i0NSHjXCfasjGl5buAcT4yVdRcRptWgd01z4GcQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/getFavoriteSalon?lat=31.5582431&lng=74.2863564",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"getFavoriteSalon"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "31.5582431"
+								},
+								{
+									"key": "lng",
+									"value": "74.2863564"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "super admin",
+			"item": [
+				{
+					"name": "helptopic",
+					"item": [
+						{
+							"name": "getAllhelpTopic",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzA1Njk2ODQsImV4cCI6MTY3MzE2MTY4NH0.r0vCmY0k_j_3XsuwfDpfMGQNx2skOQc-ITc1-Pt9y_k",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/v2/admin/getAllHelpTopic",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"getAllHelpTopic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createHelpTopic",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzA1NzExMTksImV4cCI6MTY3MzE2MzExOX0.iOasBdS4OJbG1BhO56FfeASBlCL-AVh51d3plJU1AZk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"what kind of services you provide\",\r\n    \"description\":\"We provide all kind of services \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v2/admin/createHelpTopic",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"createHelpTopic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatehelptopics",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzA1NzExMTksImV4cCI6MTY3MzE2MzExOX0.iOasBdS4OJbG1BhO56FfeASBlCL-AVh51d3plJU1AZk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"what kind of services you provide::::::::::::::::::::::::\",\r\n    \"description\":\"We provide all kind of services ::::::::::::::::::\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/v2/admin/updateHelpTopic/6392e64d0f29c503a9bd4b09",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"updateHelpTopic",
+										"6392e64d0f29c503a9bd4b09"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzA1NzExMTksImV4cCI6MTY3MzE2MzExOX0.iOasBdS4OJbG1BhO56FfeASBlCL-AVh51d3plJU1AZk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/v2/admin/deleteHelpTopic/6392e64d0f29c503a9bd4b09",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v2",
+										"admin",
+										"deleteHelpTopic",
+										"6392e64d0f29c503a9bd4b09"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\":\"subadmin123@gmail.com\",\r\n    \"password\":\"subadmin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addcategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzAyMTkwMDksImV4cCI6MTY3MjgxMTAwOX0._RzGrzGHFGjEt4Ef_8nF-HR7wXrCvjMxUp9beudOa6Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"cracksdsd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/addCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getallcomplaints",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzAyMTkwMDksImV4cCI6MTY3MjgxMTAwOX0._RzGrzGHFGjEt4Ef_8nF-HR7wXrCvjMxUp9beudOa6Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/getAllComplaints",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"getAllComplaints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhlY2YxNTk5NGRkNDA2MDk2NDgyZjUiLCJpYXQiOjE2NzAzMTAwMjYsImV4cCI6MTY3MjkwMjAyNn0.Gv2WrTGoSCBup14hBMCl4ORFkoU8scc_BIJvUJsyiik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/getUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"getUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSubAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzAzMTA5MTgsImV4cCI6MTY3MjkwMjkxOH0._H3HRhEvLe4x43FuykSudSNFSo_o2VPhf50ALC7rpsw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Sub\",\r\n    \"lastName\":\"Admin\",\r\n    \"email\":\"subadmin12345@gmail.com\",\r\n    \"password\":\"subadmin12345\",\r\n    \"phoneNo\":\"+929110119833\",\r\n    \"userRole\":\"sub-admin\",\r\n    \"permission\":[\r\n        \"dashboard\", \"customers\", \"salons\", \"services\", \"payments\", \"offers\", \"coupons\", \"subcriptions\",\r\n        \"manage points\",\"email and push notification\", \"language\", \"complaints\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://c7b5-182-185-226-191.in.ngrok.io/api/v2/admin/createSubAdmin",
+							"protocol": "https",
+							"host": [
+								"c7b5-182-185-226-191",
+								"in",
+								"ngrok",
+								"io"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"createSubAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activeAndInactiveUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhmMThiMDgxNGEyMjRkMDhjZTcwZDIiLCJpYXQiOjE2NzAzMjU4MzksImV4cCI6MTY3MjkxNzgzOX0.GXECcM9KMUnt-nQtYVDxcG83YlBAqlslvNUs9bqkFIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/activeAndInactiveUser/637478ed58a0311ddfecaede",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"activeAndInactiveUser",
+								"637478ed58a0311ddfecaede"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activeAndInactiveSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhmMThiMDgxNGEyMjRkMDhjZTcwZDIiLCJpYXQiOjE2NzAzMjc2ODQsImV4cCI6MTY3MjkxOTY4NH0.zbipfCEAU4RCJfy6INz5CuTHb8hX_iNsrQjSQEr0iA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/activeAndInactiveSalon/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"activeAndInactiveSalon",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"subadmin12345@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/forgotPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetpassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":\"809570\",\r\n    \"email\":\"subadmin12345@gmail.com\",\r\n    \"password\":\"asdfghjkl\",\r\n     \"confirmPassword\":\"asdfghjkl\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSubAdmins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzAzMzEwOTIsImV4cCI6MTY3MjkyMzA5Mn0.V7Da8jaDdvJBrs0kyj10cFPb18RTn2PixWtCrgFaQUY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/getAllSubAdmin",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"getAllSubAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSalon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhmMThiMDgxNGEyMjRkMDhjZTcwZDIiLCJpYXQiOjE2NzAzOTgzMTgsImV4cCI6MTY3Mjk5MDMxOH0.gxNwXAU-rhI-LsDeYTjbdEWn-B6j9w3haHub7Ih9Src",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/getSalon",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"getSalon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getoffers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhmMThiMDgxNGEyMjRkMDhjZTcwZDIiLCJpYXQiOjE2NzAzOTgzMTgsImV4cCI6MTY3Mjk5MDMxOH0.gxNwXAU-rhI-LsDeYTjbdEWn-B6j9w3haHub7Ih9Src",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/getOffers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"getOffers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activeandinactiveoffer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhmMThiMDgxNGEyMjRkMDhjZTcwZDIiLCJpYXQiOjE2NzAzOTgzMTgsImV4cCI6MTY3Mjk5MDMxOH0.gxNwXAU-rhI-LsDeYTjbdEWn-B6j9w3haHub7Ih9Src",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/activeAndInactiveOffer/63905b2bc4b9cdb26099eead",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"activeAndInactiveOffer",
+								"63905b2bc4b9cdb26099eead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSalonDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhmMThiMDgxNGEyMjRkMDhjZTcwZDIiLCJpYXQiOjE2NzAzOTgzMTgsImV4cCI6MTY3Mjk5MDMxOH0.gxNwXAU-rhI-LsDeYTjbdEWn-B6j9w3haHub7Ih9Src",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/api/v2/admin/getSalonDetails/6371df04b3eed0cc8455be2d",
+							"protocol": "http",
+							"host": [
+								"ec2-18-191-10-78",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"getSalonDetails",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getallserviceAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/getAllService",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"getAllService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSalonSubscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhmMThiMDgxNGEyMjRkMDhjZTcwZDIiLCJpYXQiOjE2NzAzOTgzMTgsImV4cCI6MTY3Mjk5MDMxOH0.gxNwXAU-rhI-LsDeYTjbdEWn-B6j9w3haHub7Ih9Src",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subsciptionValue\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/updateSalonSubscription/6371df04b3eed0cc8455be2d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"updateSalonSubscription",
+								"6371df04b3eed0cc8455be2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activeAndInactiveSubAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzA1Njk2ODQsImV4cCI6MTY3MzE2MTY4NH0.r0vCmY0k_j_3XsuwfDpfMGQNx2skOQc-ITc1-Pt9y_k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v2/admin/activeAndInactiveSubAdmin/638ecf15994dd406096482f5",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"activeAndInactiveSubAdmin",
+								"638ecf15994dd406096482f5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc1YjlhNzFmMmQ0NDJkZWFkMmUxYzUiLCJpYXQiOjE2Njg4NDUzMDYsImV4cCI6MTY3MTQzNzMwNn0.0sgB52KWHk9baINHFfPrczsMHqZeiPNGuTA-HVNNcQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v2/createBooking",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"createBooking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSalonServiceStylistType",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0NzhlZDU4YTAzMTFkZGZlY2FlZGUiLCJpYXQiOjE2Njg1ODEyOTMsImV4cCI6MTY3MTE3MzI5M30.Dn2bOxtWzHsAJWbZlkJ0FoiTJJw9oEEWwaO1j1j6XHk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"salonId\":\"6378bd39608cdeecac35fef2\",\r\n    \"stylistId\":\"6375c03e6e8f916b82fedd97\",\r\n    \"serviceId\":\"637780b23e786e8f5dc3ecb6\",\r\n    \"serviceTypeId\":\"637daf6748b2d5e034f70611\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v2/addSalonServiceStylistType",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"addSalonServiceStylistType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addComplaint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc1YjlhNzFmMmQ0NDJkZWFkMmUxYzUiLCJpYXQiOjE2Njg4NDUzMDYsImV4cCI6MTY3MTQzNzMwNn0.0sgB52KWHk9baINHFfPrczsMHqZeiPNGuTA-HVNNcQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"Bad experience\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v2/addComplaint/6371df04b3eed0cc8455be2d",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"addComplaint",
+						"6371df04b3eed0cc8455be2d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSalonServiceStylistType",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc1YjlhNzFmMmQ0NDJkZWFkMmUxYzUiLCJpYXQiOjE2Njg4NDUzMDYsImV4cCI6MTY3MTQzNzMwNn0.0sgB52KWHk9baINHFfPrczsMHqZeiPNGuTA-HVNNcQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"salonId\":\"6371e140b3eed0cc8455be36\",\r\n    \"stylistId\":\"6375c12bb57a024961a0fd98\",\r\n    \"serviceId\":\"636b514ea0dbeac1f95cab8c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v2/getSalonServiceStylistType/637daf6748b2d5e034f70611",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"getSalonServiceStylistType",
+						"637daf6748b2d5e034f70611"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUserRating",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc3MjE4NTQwZDVmMmMxNTMzZWI4YjMiLCJpYXQiOjE2Njk2Mzc1MDMsImV4cCI6MTY3MjIyOTUwM30.xNwyQa9fN83FNrwDCIL6654_RIsN4tslYxuqwDC6b7s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"6374843a426f0ca39a5b22c7\",\r\n    \"salonId\":\"6371df04b3eed0cc8455be2d\",\r\n    \"rating\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v2/createUserRating",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"createUserRating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getbooking byuser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0ODQzYTQyNmYwY2EzOWE1YjIyYzciLCJpYXQiOjE2Njk4Mjg3NjUsImV4cCI6MTY3MjQyMDc2NX0.ocwRC4Vgmp0Gxi6PJkcqLOC8MvpWzJOIvsiq4Q2Tqps",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-18-191-10-78.us-east-2.compute.amazonaws.com:5000/api/v2/findBookingByUser",
+					"protocol": "http",
+					"host": [
+						"ec2-18-191-10-78",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"findBookingByUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzA1Njk2ODQsImV4cCI6MTY3MzE2MTY4NH0.r0vCmY0k_j_3XsuwfDpfMGQNx2skOQc-ITc1-Pt9y_k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v2/getAllHelpTopic",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"getAllHelpTopic"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzc0ODQzYTQyNmYwY2EzOWE1YjIyYzciLCJpYXQiOjE2NzA1NzIxMDUsImV4cCI6MTY3MzE2NDEwNX0.Bjj_QND6DdYMQEadhRvOcFJilviM3wddgVDbXqPu4EE",
+			"type": "default"
+		},
+		{
+			"key": "admin_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzg5ZDUzODE2MDhlMjdiODg4YjgwZWYiLCJpYXQiOjE2NzA1Nzc0NjgsImV4cCI6MTY3MzE2OTQ2OH0.5nGbXT1UAES0W0Ax-wIu0kfIAJeSEZGmHC78OHQUw8M",
+			"type": "default"
+		},
+		{
+			"key": "subadmin123_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzhlY2YxNTk5NGRkNDA2MDk2NDgyZjUiLCJpYXQiOjE2NzA1Nzc1NjUsImV4cCI6MTY3MzE2OTU2NX0.iH3McXYneEaENQWO2qfgECNtjyCvuCKGeKutqiv5t0Y",
+			"type": "default"
+		}
+	]
+}

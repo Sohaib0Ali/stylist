@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "107668752955",
+    "project_id": "komb-97508",
+    "storage_bucket": "komb-97508.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107668752955:android:97d62102d7d9361a532a1e",
+        "android_client_info": {
+          "package_name": "com.stylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107668752955-jh4nq6copk9otlqd9js9mhikbuje9ujo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8BHKMzMhtVdVM03Ceg7hy6Nf-a8VvzkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107668752955-jh4nq6copk9otlqd9js9mhikbuje9ujo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "107668752955-7f51a7fflor2jn3sdq5cuqvgem2kafb3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.stylist-business.looks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

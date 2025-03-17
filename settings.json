@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": ["android/app/src/main/java"],
+    "java.project.outputPath": "android/app/build/intermediates/javac/debug/classes",
+    "java.project.referencedLibraries": [
+      "android/app/libs/*.jar",
+      "android/app/build/intermediates/runtime_library_classes/debug/classes.jar"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-17" // Replace with the actual path to your JDK 17 installation
+  }

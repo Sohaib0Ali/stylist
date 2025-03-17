@@ -1,0 +1,145 @@
+apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services'
+
+project.ext.react = [
+    bundleInDebug: false,
+    bundleInRelease: true,
+    root: "../../",
+    enableHermes: true,  // Existing Hermes config
+    hermesEnabled: true   // Add this new line
+]
+
+def reactNativeArchitectures() {
+    def value = project.getProperties().get("reactNativeArchitectures")
+    return value ? value.split(",") : ["armeabi-v7a", "x86", "x86_64", "arm64-v8a"]
+}
+
+apply from: "../../node_modules/react-native/react.gradle"
+
+def enableSeparateBuildPerCPUArchitecture = false
+def enableProguardInReleaseBuilds = true
+def jscFlavor = 'org.webkit:android-jsc:+'
+def enableHermes = project.ext.react.get("enableHermes", false) ?: false
+
+android {
+    namespace "com.stylist" // Add this line
+    ndkVersion rootProject.ext.ndkVersion
+    // compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion 33  // Update from 31 → 33
+    // targetSdkVersion 33   // Update from 31 → 33
+    lintOptions { 
+        checkReleaseBuilds false
+    }
+
+    defaultConfig {
+        applicationId "com.stylist"
+        minSdkVersion rootProject.ext.minSdkVersion
+        // targetSdkVersion rootProject.ext.targetSdkVersion
+        targetSdkVersion 33  // Remove reference to rootProject
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+
+        if (isNewArchitectureEnabled()) {
+            externalNativeBuild {
+                ndkBuild {
+                    arguments "APP_PLATFORM=android-21",
+                            "APP_STL=c++_shared",
+                            "NDK_TOOLCHAIN_VERSION=clang",
+                            "GENERATED_SRC_DIR=$buildDir/generated/source",
+                            "PROJECT_BUILD_DIR=$buildDir",
+                            "REACT_ANDROID_DIR=$rootDir/../node_modules/react-native/ReactAndroid",
+                            "REACT_ANDROID_BUILD_DIR=$rootDir/../node_modules/react-native/ReactAndroid/build",
+                            "NODE_MODULES_DIR=$rootDir/../node_modules"
+                    cFlags "-Wall", "-Werror", "-fexceptions", "-frtti", "-DWITH_INSPECTOR=1"
+                    cppFlags "-std=c++17"
+                    targets "stylist_appmodules"
+                }
+            }
+
+            if (!enableSeparateBuildPerCPUArchitecture) {
+                ndk {
+                    abiFilters(*reactNativeArchitectures())
+                }
+            }
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    splits {
+        abi {
+            reset()
+            enable enableSeparateBuildPerCPUArchitecture
+            universalApk false
+            include(*reactNativeArchitectures())
+        }
+    }
+}
+
+// afterEvaluate {
+//     // def copyFontsTask = tasks.findByName("copyDebugReactNativeVectorIconFonts")
+//     if (copyFontsTask != null) {
+//         tasks.findAll { task ->
+//             task.name.startsWith("process") && task.name.endsWith("Manifest")
+//         }.each { task ->
+//             task.dependsOn(copyFontsTask)
+//         }
+//         tasks.findByName("compressDebugAssets")?.dependsOn(copyFontsTask)
+//         tasks.findByName("mergeDebugJavaResource")?.dependsOn(copyFontsTask)
+//     }
+// }
+
+dependencies {
+       constraints {
+        implementation("com.facebook.react:react-native") {
+            version {
+                strictly "0.70.15" // Match your React Native version
+            }
+        }
+    }
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    // implementation "com.facebook.react:react-native:0.70.15"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation('com.google.firebase:firebase-bom:32.7.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    // implementation project(':react-native-vector-icons') // Add this line
+
+    if (enableHermes) {
+        implementation("com.facebook.react:hermes-engine:+") {
+            exclude group: 'com.facebook.fbjni'
+        }
+    } else {
+        implementation jscFlavor
+    }
+}
+
+// apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
+def isNewArchitectureEnabled() {
+    return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
+}
