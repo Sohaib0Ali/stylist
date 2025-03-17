@@ -1,3 +1,17 @@
+Current Development Environment Details: 
+
+Node.js Version: 22.14.0
+Yarn Version: 4.7.0
+React Native CLI Version: 2.0.1
+React Native Version: 0.70.15
+React: 18.2.0
+JDK Version: 17 (LTS)
+Android SDK Versions Installed: 31, 33
+
+
+
+
+
 # RN-Komb-V2
 These changes Required in Node modules:
 Path:
